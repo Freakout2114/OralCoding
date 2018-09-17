@@ -20,6 +20,7 @@ public class Identifier {
     // ----- Setters -----
 
     public void setId(String id) {
+        id = id.substring(0, 1).toUpperCase() + id.substring(1);
         this.id = id;
     }
 }

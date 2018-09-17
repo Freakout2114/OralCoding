@@ -7,10 +7,12 @@ public class Main {
     }
 
     public Main() {
-        String inputText = "Create new private test class";
+        String inputText;
         Parser parser = new Parser();
 
+        inputText = "Create person class";
         System.out.println("Input text: " + inputText);
         parser.parse(inputText);
+
     }
 }

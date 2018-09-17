@@ -3,16 +3,19 @@ package component.classes;
 import syntax.Access;
 import syntax.Identifier;
 
-public class ClassObject {
+public class Constructor {
     private Access access;
     private Identifier id;
-    private Constructor constructor;
 
-    public ClassObject(Access access, Identifier id) {
+    public Constructor(Identifier id) {
+        this(null, id);
+    }
+
+    public Constructor(Access access, Identifier id) {
         setAccess(access);
         setId(id);
-        constructor = new Constructor(id);
     }
+
 
     // ----- Getters -----
 
@@ -24,16 +27,10 @@ public class ClassObject {
         return id;
     }
 
-    public Constructor getConstructor() {
-        return constructor;
-    }
-
     public String toString() {
-        String output = access + " class " + id + " {\n" +
-                constructor +
-                "\n}";
+        String out = "\t" + access + " " + id + "() {\n\t}";
 
-        return output;
+        return out;
     }
 
     // ----- Setters -----
@@ -48,9 +45,5 @@ public class ClassObject {
 
     public void setId(Identifier id) {
         this.id = id;
-    }
-
-    public void setConstructor(Constructor constructor) {
-        this.constructor = constructor;
     }
 }
